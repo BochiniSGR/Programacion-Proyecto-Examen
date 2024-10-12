@@ -20,7 +20,7 @@ public int getPuntaje(){
     return puntaje; 
 }
 
-public String getText{
+public String getText(){
     return text;
 }    
 
