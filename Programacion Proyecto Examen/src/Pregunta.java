@@ -24,7 +24,7 @@ public String getText{
     return text;
 }    
 
-public abstract void buscar();
+public abstract boolean buscar();
     
     
 }
