@@ -20,10 +20,9 @@ abstract class Pregunta {
     public abstract boolean buscar();
 }
 
-
 class Selec_Mul_Pregunta extends Pregunta {
     private String[] opciones;
-    private int respuestaCorrecta; 
+    private int respuestaCorrecta;  
 
     public Selec_Mul_Pregunta(String texto, String[] opciones, int respuestaCorrecta, int peso) {
         super(texto, peso);
@@ -36,20 +35,16 @@ class Selec_Mul_Pregunta extends Pregunta {
         Scanner sc = new Scanner(System.in);
         System.out.println(getTexto());
 
-
         char letra = 'a';
         for (int i = 0; i < opciones.length; i++) {
             System.out.println(letra + ") " + opciones[i]);
             letra++;
         }
 
-
         System.out.print("Elija la opción correcta (a, b, c, etc.): ");
         String respuesta = sc.nextLine().toLowerCase();
 
-
         int indiceRespuestaUsuario = respuesta.charAt(0) - 'a';
-
 
         if (indiceRespuestaUsuario == respuestaCorrecta) {
             System.out.println("¡Correcto!");
@@ -61,7 +56,6 @@ class Selec_Mul_Pregunta extends Pregunta {
     }
 }
 
-
 class Exam {
     private Pregunta[] preguntas;
     private int contadorPreguntas;
@@ -69,7 +63,7 @@ class Exam {
     private int puntajeObtenido;
 
     public Exam() {
-        preguntas = new Pregunta[10];  
+        preguntas = new Pregunta[10]; 
         contadorPreguntas = 0;
         puntajeTotal = 0;
         puntajeObtenido = 0;
