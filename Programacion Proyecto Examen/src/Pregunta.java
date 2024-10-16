@@ -8,10 +8,11 @@
  * @author Joshu
  */
 public abstract class Pregunta {
-   protected int puntaje;
    protected String text;
+   protected int puntaje;
+   
 
-   public Pregunta(int Puntaje,String text){
+   public Pregunta(String text,int puntaje){
        this.puntaje = puntaje;
        this.text = text;
    }      
