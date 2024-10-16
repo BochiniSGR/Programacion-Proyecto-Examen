@@ -19,11 +19,11 @@ public class TFpregunta extends Pregunta{
 public boolean buscar(){
     Scanner scan = new Scanner(System.in);
     System.out.println("\n>>>>>>"+getText()+"<<<<<<"");
-    System.out.print("Ingrese una opcion verdadero o falso ( T | F )");
+    System.out.print("Ingrese una opcion verdadero o falso ( T | F ): ");
     String respuesta = scan.nextLine().toLowerCase();
 
     while(!respuesta.equals("t") && !respuesta.equals("f")){
-        System.out.print("Su respuesta no es valida, intentelo otra vez ( T | F )");
+        System.out.print("Su respuesta no es valida, intentelo otra vez ( T | F ): ");
         respuesta = scan.nextLine().toLowerCase();
     }
 
