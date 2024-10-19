@@ -37,10 +37,10 @@ class Selec_Mul_Pregunta extends Pregunta {
         int indiceRespuestaUsuario = respuesta.charAt(0) - 'a';
 
         if (Arrays.stream(respuestasCorrectas).anyMatch(i -> i == indiceRespuestaUsuario)) {
-            System.out.println("¡Correcto!");
+            //System.out.println("¡Correcto!");
             return true;
         } else {
-            System.out.println("Incorrecto.");
+            //System.out.println("Incorrecto.");
             return false;
         }
     }
