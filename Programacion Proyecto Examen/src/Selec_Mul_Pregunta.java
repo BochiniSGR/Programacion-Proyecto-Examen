@@ -1,3 +1,5 @@
+import java.util.Scanner;
+import java.util.Arrays;
 
 class Selec_Mul_Pregunta extends Pregunta {
     private String[] opciones;
