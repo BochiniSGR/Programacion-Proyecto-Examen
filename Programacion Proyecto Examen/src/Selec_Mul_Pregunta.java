@@ -12,8 +12,8 @@ class Selec_Mul_Pregunta extends Pregunta {
             throw new IllegalArgumentException("Debe haber al menos 2 opciones en una pregunta de selección múltiple.");
         }
 
-        if (respuestasCorrectas.length < 2) {
-            throw new IllegalArgumentException("Debe haber al menos 2 respuestas correctas.");
+        if (respuestasCorrectas.length < 1) {
+            throw new IllegalArgumentException("Debe haber al menos 1 respuesta correcta.");
         }
 
         this.opciones = opciones;
@@ -23,7 +23,11 @@ class Selec_Mul_Pregunta extends Pregunta {
     @Override
     public boolean buscar() {
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("****************************************");
+        System.out.println("Por favor, seleccione 1 o más alternativas:");
         System.out.println(getTexto());
+        System.out.println("****************************************");
 
         char letra = 'a';
         for (int i = 0; i < opciones.length; i++) {
@@ -31,17 +35,26 @@ class Selec_Mul_Pregunta extends Pregunta {
             letra++;
         }
 
-        System.out.print("Elija la opción correcta (a, b, c, etc.): ");
+        System.out.print("\nIngrese su respuesta (ej. 'a' o 'a b'): ");
         String respuesta = sc.nextLine().toLowerCase();
 
-        int indiceRespuestaUsuario = respuesta.charAt(0) - 'a';
+        String[] respuestasUsuario = respuesta.split(" ");
 
-        if (Arrays.stream(respuestasCorrectas).anyMatch(i -> i == indiceRespuestaUsuario)) {
-            //System.out.println("¡Correcto!");
-            return true;
-        } else {
-            //System.out.println("Incorrecto.");
-            return false;
+        boolean esCorrecta = true;
+        for (String r : respuestasUsuario) {
+            int indiceRespuestaUsuario = r.charAt(0) - 'a';
+
+            if (!Arrays.stream(respuestasCorrectas).anyMatch(i -> i == indiceRespuestaUsuario)) {
+                esCorrecta = false;
+            }
         }
+
+        if (esCorrecta) {
+            System.out.println("\n¡Correcto!\n");
+        } else {
+            System.out.println("\nIncorrecto.\n");
+        }
+
+        return esCorrecta;
     }
 }
