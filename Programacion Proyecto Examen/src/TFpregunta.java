@@ -13,7 +13,7 @@ public class TFpregunta extends Pregunta {
         Scanner scan = new Scanner(System.in);
         try {
             System.out.println("\n>>>>>>" + getText() + "<<<<<<\n");
-            System.out.print("Ingrese una opción (T | F): ");
+            System.out.print("Ingrese una opcion (T | F): ");
             String respuesta = scan.nextLine().toLowerCase();
 
             while (!respuesta.equals("t") && !respuesta.equals("f")) {
