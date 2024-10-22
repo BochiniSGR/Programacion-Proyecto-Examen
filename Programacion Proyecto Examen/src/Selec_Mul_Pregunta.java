@@ -26,7 +26,7 @@ class Selec_Mul_Pregunta extends Pregunta {
 
         System.out.println("****************************************");
         System.out.println("Por favor, seleccione 1 o más alternativas:");
-        System.out.println(getTexto());
+        System.out.println(getText());
         System.out.println("****************************************");
 
         char letra = 'a';
