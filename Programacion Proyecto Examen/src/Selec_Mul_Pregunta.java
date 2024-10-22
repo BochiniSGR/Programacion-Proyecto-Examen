@@ -67,9 +67,9 @@ class Selec_Mul_Pregunta extends Pregunta {
         }
 
         if (esCorrecta) {
-            System.out.println("\n¡Correcto!\n");
+           // System.out.println("\n¡Correcto!\n");
         } else {
-            System.out.println("\nIncorrecto.\n");
+            //System.out.println("\nIncorrecto.\n");
         }
 
         return esCorrecta;
