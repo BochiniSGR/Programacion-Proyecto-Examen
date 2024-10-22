@@ -25,7 +25,7 @@ class Selec_Mul_Pregunta extends Pregunta {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("****************************************");
-        System.out.println("Por favor, seleccione 1 o más alternativas:");
+        System.out.println("Por favor, seleccione 1 o mas alternativas:");
         System.out.println(getText());
         System.out.println("****************************************");
 
