@@ -26,7 +26,7 @@ class Selec_Mul_Pregunta extends Pregunta {
 
         System.out.println("****************************************");
         System.out.println("Por favor, seleccione 1 o más alternativas:");
-        System.out.println(getText());
+        System.out.println(getTexto());
         System.out.println("****************************************");
 
         char letra = 'a';
@@ -35,8 +35,25 @@ class Selec_Mul_Pregunta extends Pregunta {
             letra++;
         }
 
-        System.out.print("\nIngrese su respuesta (ej. 'a' o 'a b'): ");
-        String respuesta = sc.nextLine().toLowerCase();
+        boolean entradaValida = false;
+        String respuesta = "";
+        while (!entradaValida) {
+            try {
+                System.out.print("\nIngrese su respuesta (ej. 'a' o 'a b'): ");
+                respuesta = sc.nextLine().toLowerCase();
+
+                for (String r : respuesta.split(" ")) {
+                    if (r.length() != 1 || r.charAt(0) < 'a' || r.charAt(0) >= ('a' + opciones.length)) {
+                        throw new IllegalArgumentException("Respuesta inválida. Por favor, ingrese solo letras correspondientes a las opciones disponibles.");
+                    }
+                }
+
+                entradaValida = true;
+
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
         String[] respuestasUsuario = respuesta.split(" ");
 
@@ -50,9 +67,9 @@ class Selec_Mul_Pregunta extends Pregunta {
         }
 
         if (esCorrecta) {
-            //System.out.println("\n¡Correcto!\n");
+            System.out.println("\n¡Correcto!\n");
         } else {
-            //System.out.println("\nIncorrecto.\n");
+            System.out.println("\nIncorrecto.\n");
         }
 
         return esCorrecta;
