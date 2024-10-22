@@ -9,36 +9,36 @@
  */
 import java.util.Scanner;
 
-public class Resp_Cortas extends pregunta{
+public class Resp_Cortas extends pregunta {
     private final String respuestacorrecta;
     private static final Scanner scanner = new Scanner(System.in);
 
     public Resp_Cortas(String text, String respuestaCorrecta, int puntaje) {
-    super (puntaje, text);
-    this.respuestacorrecta=respuestaCorrecta;
+        super(puntaje, text);
+        this.respuestacorrecta = respuestaCorrecta;
     }
+
     @Override
-    public boolean buscar () {
-    System.out.println (getText ());
-    String respuestaUsuario = leerRespuesta ();
+    public boolean buscar() {
+        System.out.println("\n*************** PREGUNTA ***************");
+        System.out.println(getText());
+        System.out.println("****************************************");
+        
+        String respuestaUsuario = leerRespuesta();
 
-    if (respuestacorrecta.equalsIgnoreCase (respuestaUsuario)) {
-    //System. out.println("¡bien hecho lacayo!");
-    return true;
-    }else{
-    //System.out.println ("equivocado. La respuesta correcta era: " + respuestacorrecta);
-    return false;
-
+        if (respuestacorrecta.equalsIgnoreCase(respuestaUsuario)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    String leerRespuesta() {
+        System.out.println("\nIngresa tu respuesta a continuación:");
+        System.out.print(">> "); 
+        String respuesta = scanner.nextLine();
+
+        return respuesta;
     }
+}
 
-    String leerRespuesta () {
-
-    System.out.println("ingresa tu respuesta: ");
-    String respuesta = scanner.nextLine();
-
-
-    return respuesta;
-    }
-    }
