@@ -34,7 +34,7 @@ public class Resp_Cortas extends Pregunta {
     }
 
     String leerRespuesta() {
-        System.out.println("\nIngresa tu respuesta a continuación:");
+        System.out.println("\nIngresa tu respuesta a continuacion:");
         System.out.print(">> "); 
         String respuesta = scanner.nextLine();
 
