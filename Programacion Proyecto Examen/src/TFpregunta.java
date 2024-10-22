@@ -17,7 +17,7 @@ public class TFpregunta extends Pregunta {
             String respuesta = scan.nextLine().toLowerCase();
 
             while (!respuesta.equals("t") && !respuesta.equals("f")) {
-                System.out.print("Lo que ha ingresado es inválido, pruebe otra vez (T | F): ");
+                System.out.print("Lo que ha ingresado es invalido, pruebe otra vez (T | F): ");
                 respuesta = scan.nextLine().toLowerCase();
             }
 
