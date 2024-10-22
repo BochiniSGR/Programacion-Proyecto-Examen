@@ -21,7 +21,7 @@ public class main {
         exam.agregaPregunta(new Selec_Mul_Pregunta("Cuales de los siguientes son sistemas operativos?", opciones3,
                 respuestasCorrectas3, 3));
 
-        exam.agregaPregunta(new Resp_Cortas(Cual es la capital de Francia?", "paris", 5));
+        exam.agregaPregunta(new Resp_Cortas("Cual es la capital de Francia?", "paris", 5));
         exam.agregaPregunta(new Resp_Cortas("Quién escribió 'Cien años de soledad'?", "gabriel garcia marquez", 5));
         exam.agregaPregunta(new Resp_Cortas("Cual es el simbolo quimico del oro?", "au", 5));
         exam.agregaPregunta(new Resp_Cortas("En que año llegó el hombre a la luna?", "1969", 5));
