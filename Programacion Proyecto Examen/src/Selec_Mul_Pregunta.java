@@ -9,7 +9,7 @@ class Selec_Mul_Pregunta extends Pregunta {
         super(texto, puntaje);
         
         if (opciones.length < 2) {
-            throw new IllegalArgumentException("Debe haber al menos 2 opciones en una pregunta de selección múltiple.");
+            throw new IllegalArgumentException("Debe haber al menos 2 opciones en una pregunta de seleccion multiple.");
         }
 
         if (respuestasCorrectas.length < 1) {
@@ -44,7 +44,7 @@ class Selec_Mul_Pregunta extends Pregunta {
 
                 for (String r : respuesta.split(" ")) {
                     if (r.length() != 1 || r.charAt(0) < 'a' || r.charAt(0) >= ('a' + opciones.length)) {
-                        throw new IllegalArgumentException("Respuesta inválida. Por favor, ingrese solo letras correspondientes a las opciones disponibles.");
+                        throw new IllegalArgumentException("Respuesta invalida. Por favor, ingrese solo letras correspondientes a las opciones disponibles.");
                     }
                 }
 
