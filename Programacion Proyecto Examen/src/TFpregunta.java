@@ -1,37 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 import java.util.Scanner;
-/**
- *
- * @author Joshu
- */
-public class TFpregunta extends Pregunta{
-    private boolean respCorrecta;
 
-    public TFpregunta(String text , boolean respCorrecta, int puntaje ){
+public class TFpregunta extends Pregunta {
+    private final boolean respCorrecta;
+
+    public TFpregunta(String text, boolean respCorrecta, int puntaje) {
         super(text, puntaje);
         this.respCorrecta = respCorrecta;
     }
 
-@Override
-public boolean buscar(){
-    Scanner scan = new Scanner(System.in);
-    System.out.println("\n>>>>>>"+getText()+"<<<<<<"");
-    System.out.print("Ingrese una opcion verdadero o falso ( T | F ): ");
-    String respuesta = scan.nextLine().toLowerCase();
+    @Override
+    public boolean buscar() {
+        Scanner scan = new Scanner(System.in);
+        try {
+            System.out.println("\n>>>>>>" + getText() + "<<<<<<\n");
+            System.out.print("Ingrese una opción (T | F): ");
+            String respuesta = scan.nextLine().toLowerCase();
 
-    while(!respuesta.equals("t") && !respuesta.equals("f")){
-        System.out.print("Su respuesta no es valida, intentelo otra vez ( T | F ): ");
-        respuesta = scan.nextLine().toLowerCase();
-    }
+            while (!respuesta.equals("t") && !respuesta.equals("f")) {
+                System.out.print("Lo que ha ingresado es inválido, pruebe otra vez (T | F): ");
+                respuesta = scan.nextLine().toLowerCase();
+            }
 
-    boolean respUsuario = respuesta.equals("t");
-    if(respUsuario == respCorrecta){
-        return true;
-    }else{
-        return false;
+            boolean respUsuario = respuesta.equals("t");
+
+            return respUsuario == respCorrecta;
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error al procesar la pregunta: " + e.getMessage());
+            return false;
+        }
     }
-}      
 }
