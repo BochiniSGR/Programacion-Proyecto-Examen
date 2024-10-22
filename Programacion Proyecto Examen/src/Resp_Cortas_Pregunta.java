@@ -9,12 +9,12 @@
  */
 import java.util.Scanner;
 
-public class Resp_Cortas extends pregunta {
+public class Resp_Cortas extends Pregunta {
     private final String respuestacorrecta;
     private static final Scanner scanner = new Scanner(System.in);
 
     public Resp_Cortas(String text, String respuestaCorrecta, int puntaje) {
-        super(puntaje, text);
+        super(text, puntaje);
         this.respuestacorrecta = respuestaCorrecta;
     }
 
