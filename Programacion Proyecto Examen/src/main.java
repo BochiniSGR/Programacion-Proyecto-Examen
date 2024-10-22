@@ -22,7 +22,7 @@ public class main {
                 respuestasCorrectas3, 3));
 
         exam.agregaPregunta(new Resp_Cortas("Cual es la capital de Francia?", "paris", 5));
-        exam.agregaPregunta(new Resp_Cortas("Quién escribió 'Cien años de soledad'?", "gabriel garcia marquez", 5));
+        exam.agregaPregunta(new Resp_Cortas("Quien escribio 'Cien años de soledad'?", "gabriel garcia marquez", 5));
         exam.agregaPregunta(new Resp_Cortas("Cual es el simbolo quimico del oro?", "au", 5));
         exam.agregaPregunta(new Resp_Cortas("En que año llegó el hombre a la luna?", "1969", 5));
 
